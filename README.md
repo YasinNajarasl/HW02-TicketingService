@@ -21,11 +21,11 @@
 
 ۱. نقض اصول SOLID
 
-SRP (Single Responsibility): TicketService مسئولیت‌های متعدد (تغییر وضعیت، پردازش نوع، پاسخ‌دهی، لاگینگ) را دارد.
+- اصل TicketService: SRP (Single Responsibility) مسئولیت‌های متعدد (تغییر وضعیت، پردازش نوع، پاسخ‌دهی، لاگینگ) را دارد.
 
-OCP (Open-Closed): برای اضافه کردن وضعیت/نوع/کانال جدید، باید if-elseها را تغییر داد (closed for modification).
+- اصل OCP (Open-Closed): برای اضافه کردن وضعیت/نوع/کانال جدید، باید if-elseها را تغییر داد (closed for modification).
 
-DIP: وابستگی مستقیم به جزئیات Ticket (بدون abstraction).
+- اصل DIP: وابستگی مستقیم به جزئیات Ticket (بدون abstraction).
 
 ۲. نقض PLK (Law of Demeter) و CRP
 
