@@ -1,6 +1,6 @@
 <div dir="rtl">
   
-# HW02-TicketingService
+# پروژه سرویس تیکتینگ (HW02-TicketingService)
 
 ## ساختار فعلی سیستم 
 
