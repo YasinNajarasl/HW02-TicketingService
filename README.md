@@ -21,22 +21,22 @@
 
 ۱. نقض اصول SOLID
 
-- اصل TicketService: SRP (Single Responsibility) مسئولیت‌های متعدد (تغییر وضعیت، پردازش نوع، پاسخ‌دهی، لاگینگ) را دارد.
+- اصل TicketService :SRP (Single Responsibility) مسئولیت‌های متعدد (تغییر وضعیت، پردازش نوع، پاسخ‌دهی، لاگینگ) را دارد.
 - اصل OCP (Open-Closed): برای اضافه کردن وضعیت/نوع/کانال جدید، باید if-elseها را تغییر داد (closed for modification).
 - اصل DIP: وابستگی مستقیم به جزئیات Ticket (بدون abstraction).
 
 ۲. نقض PLK (Law of Demeter) و CRP
 
-TicketService مستقیم به فیلدهای داخلی Ticket دسترسی دارد (coupling بالا).
+کلاس TicketService مستقیم به فیلدهای داخلی Ticket دسترسی دارد (coupling بالا).
 هیچ composition واقعی وجود ندارد – همه چیز متمرکز در یک متد.
 
 ۳. مشکلات عملی
 
-Long Method & Complexity: متد handle بیش از حد بزرگ و پر از شرط است.
-Hard to extend/test: اضافه کردن ویژگی جدید (مثل وضعیت جدید) ریسک باگ دارد.
-Code Duplication: منطق نوع (BUG vs. other) در چند جا تکرار شده.
-No encapsulation: رفتار تیکت خارج از کلاس Ticket است.
+- متدهای طولانی و پیچیده: متد handle بیش از حد بزرگ و پر از شرط است.
+- دشواری افزایش قابلیت و انجام تست: اضافه کردن ویژگی جدید (مثل وضعیت جدید) ریسک باگ دارد.
+- تکرار کد: منطق نوع (BUG vs. other) در چند جا تکرار شده.
+- بدون encapsulation: رفتار تیکت خارج از کلاس Ticket است.
 
 ۴. نتیجه
-این کد "کار می‌کند" اما برای پروژه واقعی نامناسب است. هدف تمرین: بازطراحی با State + Strategy + Factory برای حل این مشکلات.
-<div dir="ltr">
+این کد "کار می‌کند" اما برای پروژه واقعی نامناسب است. هدف تمرینآن است که بازطراحی با State + Strategy + Factory برای حل این مشکلات.
+</div>
