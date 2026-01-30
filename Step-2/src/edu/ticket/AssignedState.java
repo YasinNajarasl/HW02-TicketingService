@@ -6,7 +6,7 @@ public class AssignedState implements TicketState {
     public void handle(Ticket ticket) {
         ticket.process();  // اینجا استراتژی پردازش (ارجاع به واحد) فراخوانی می‌شود
 
-        ticket.setStatus("IN_PROGRESS");
+        ticket.setStatus(TicketStatus.IN_PROGRESS);
         ticket.setState(new InProgressState());
 
         log(ticket);

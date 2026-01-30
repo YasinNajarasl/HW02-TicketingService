@@ -6,7 +6,7 @@ public class ResolvedState implements TicketState {
     public void handle(Ticket ticket) {
         System.out.println("Ticket resolved");
 
-        ticket.setStatus("CLOSED");
+        ticket.setStatus(TicketStatus.CLOSED);
         ticket.setState(new ClosedState());
 
         log(ticket);

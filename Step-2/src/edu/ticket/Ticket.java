@@ -2,7 +2,7 @@ package edu.ticket;
 
 public class Ticket {
     private int id;
-    private String status = "NEW";
+    private TicketStatus status = TicketStatus.NEW;
     private String channel;
     private String type;
     private String request;
@@ -38,16 +38,16 @@ public class Ticket {
         this.state = state;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(TicketStatus status) {
         this.status = status;
     }
 
     static void log(Ticket ticket) {
-        System.out.println("Logging ticket handling : " + ticket.getId() + " -> " + ticket.getStatus());
+        System.out.println("Logging ticket handling : " + ticket.getId() + " -> " + ticket.getStatus().getDisplayName());
     }
 
     // بقیه getterها و setterها بدون تغییر باقی می‌مانند
-    public String getStatus() {
+    public TicketStatus getStatus() {
         return status;
     }
 

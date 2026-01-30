@@ -8,7 +8,7 @@ public class InProgressState implements TicketState {
 
         ticket.process();  // اینجا استراتژی پاسخ‌دهی فراخوانی می‌شود
 
-        ticket.setStatus("RESOLVED");
+        ticket.setStatus(TicketStatus.RESOLVED);
         ticket.setState(new ResolvedState());
 
         Ticket.log(ticket);
