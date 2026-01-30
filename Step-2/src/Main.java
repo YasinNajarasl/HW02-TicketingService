@@ -1,5 +1,7 @@
 import edu.ticket.Ticket;
+import edu.ticket.TicketFactory;
 import edu.ticket.TicketService;
+import edu.ticket.WebTicketFactory;
 
 public class Main {
 
@@ -8,13 +10,10 @@ public class Main {
         TicketService ticketService = new TicketService();
 
         // Example 1: Bug reported from web
-        Ticket ticket = new Ticket(1, "WEB", "BUG");
+        TicketFactory factory = new WebTicketFactory();   // یا EmailTicketFactory بسته به سناریو
+        Ticket ticket = factory.createTicket(1, "BUG");
+        ticket.setRequest("I see a very very BAD BUG!");
         ticket.setRequest("I see a very very BAD BUG!");
         ticketService.handle(ticket);
-
-        Ticket ticket_1 = new Ticket(1, "WEB", "BUG");
-        ticket_1.handle(); // باید NewState اجرا بشه → چاپ created + received from web + log
-        ticket_1.handle(); // AssignedState → process + log
-        ticket_1.handle(); // InProgressState → working + process + log
     }
 }
