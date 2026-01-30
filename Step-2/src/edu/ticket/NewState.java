@@ -12,7 +12,7 @@ public class NewState implements TicketState {
             System.out.println("Received from email");
         }
 
-        ticket.setStatus("ASSIGNED");
+        ticket.setStatus(TicketStatus.ASSIGNED);
         ticket.setState(new AssignedState());
 
         Ticket.log(ticket);
